@@ -1,76 +1,60 @@
-import React, {Component} from "react"
+import React, { Component } from 'react'
+
 class SignUp extends Component {
-    constructor() {
-        super()
-        this.state = {
-            userName: "",
-            password: "",
-            firstName :"",
-            lastName: "",
-            birthDate: "",
-            cin :"",
-            mail:"",
-            adress:""
-        }
-        this.handleChange = this.handleChange.bind(this)
-    }
+  state = {
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    adress: '',
+    dateOfBirth:''
+  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+  render() {
+    return (
+      <div className="container">
+        <form className="white" onSubmit={this.handleSubmit}>
+          <h5 className="grey-text text-darken-3">Sign Up</h5>
+          <div className="input-field">
+            <label htmlFor="email">Email</label>
+            <input type="email" id='email' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="password">Password</label>
+            <input type="password" id='password' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" id='firstName' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" id='lastName' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="adress">Adress</label>
+            <input type="text" id='adress' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="dateOfBirth">Date Of Birth</label>
+            <input type="date" id='dateOfBirth' onChange={this.handleChange} />
+          </div>
 
-
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-    handleSubmit(event){
-
-        console.log(event)
-    }
-
-    render() {
-        return (
-            <form className="container" onSubmit={this.handleSubmit}>
-                <div className='box-login-tab'></div>
-                <div className='box-login-title'>
-                    <div className='i-login'></div><h3>Sign Up</h3>
-                </div>
-
-
-                <div className="box">
-
-                    <label>Nom </label><br/>
-                    <input type="text" name="lastName"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Prénom </label><br/>
-                    <input type="text" name="firstName"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Nom d'Utilisateur </label><br/>
-                    <input type="text" name="userName"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Date de naissance</label><br/>
-                    <input type="date" name="birthDate"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Numero CIN </label><br/>
-                    <input type="text" name="cin"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Email </label><br/>
-                    <input type="email" name="mail"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Adresse</label><br/>
-                    <input type="text" name="adress"  onChange={this.handleChange} />
-                    <br/>
-                    <label>Mot de passe</label><br/>
-                    <input type="password" name="password"  onChange={this.handleChange} />
-
-
-                    <h1>{this.state.userName} {this.state.password}</h1>
-                    <input type="submit" id="submit" value="Confirmer"/>
-
-
-                </div>
-            </form>
-        )
-    }
+          <div className="input-field">
+            <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default SignUp
-

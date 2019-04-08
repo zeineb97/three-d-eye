@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
+import logo from '../Images/logo.png'
 
 const Navbar = () => {
   return (
-    <nav className="nav-wrapper grey darken-3">
+    <nav className="nav-wrapper grey darken-0">
       <div className="container">
-        <Link to='/' className="brand-logo">3D Eye</Link>
+        <Link to='/' className="brand-logo"> <img src={logo} /> </Link>
         <SignedInLinks />
         <SignedOutLinks />
       </div>
