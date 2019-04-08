@@ -5,6 +5,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import GlassesDetails from './components/Glasses/GlassesDetails'
+import Diagnostic from './components/dashboard/Diagnostic'
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path='/glasses/:id' component={GlassesDetails} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
+            <Route path='/diagnostic' component={Diagnostic} />
           </Switch>
         </div>
       </BrowserRouter>
