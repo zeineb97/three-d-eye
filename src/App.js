@@ -6,7 +6,7 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import GlassesDetails from './components/Glasses/GlassesDetails'
 import Diagnostic from './components/dashboard/Diagnostic'
-
+import MessageButton from './components/chat/MessageButton'
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
+          <MessageButton />
           <Switch>
             <Route exact path='/'component={Dashboard} />
             <Route path='/glasses/:id' component={GlassesDetails} />
