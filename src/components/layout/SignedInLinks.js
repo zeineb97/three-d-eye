@@ -6,6 +6,7 @@ const SignedInLinks = () => {
     <div>
       <ul className="right">
         <li><NavLink to='/diagnostic'>New Diagnodtic</NavLink></li>
+        <li><NavLink to='/addglasses'>Add Glasses</NavLink></li>
         <li><NavLink to='/'>Log Out</NavLink></li>
         <li>
           <NavLink to='/' className="btn btn-floating pink lighten-1">

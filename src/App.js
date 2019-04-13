@@ -6,6 +6,7 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import GlassesDetails from './components/Glasses/GlassesDetails'
 import Diagnostic from './components/dashboard/Diagnostic'
+import AddGlass from './components/Glasses/AddGlass'
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/diagnostic' component={Diagnostic} />
+            <Route path='/addglasses' component={AddGlass} />
           </Switch>
         </div>
       </BrowserRouter>
