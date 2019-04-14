@@ -1,5 +1,6 @@
 import React from 'react'
 import GlassesSummary from './GlassesSummary'
+import {Link} from 'react-router-dom'
 
 const GlassesList = ({glasses}) => {
     return (
@@ -9,7 +10,9 @@ const GlassesList = ({glasses}) => {
            {
                glasses && glasses.map(glass => {
                    return (
+                       <Link to={"/glasses/"+ glass.id}>
                        <GlassesSummary glass={glass} key={glass.id}/>
+                       </Link>
                    )
                })
            }
