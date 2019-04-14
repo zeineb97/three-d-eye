@@ -7,7 +7,7 @@ export const addGlass=(glass)=> {
             ...glass, 
             createdAt: new Date()
     }).then(() => {
-      dispatch({ type: 'ADD_GLASS_SUCCESS' });
+      dispatch({ type: 'ADD_GLASS_SUCCESS', glass });
     }).catch(err => {
       dispatch({ type: 'ADD_GLASS_ERROR' }, err);
     });

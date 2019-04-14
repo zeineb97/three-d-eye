@@ -11,14 +11,14 @@ class MessageButton extends Component {
   */
   return (
     
-    <div class="fixed-action-btn">
-  <a class="btn-floating btn-large red" href="false">
-    <i class="large material-icons">chat</i>
+    <div className="fixed-action-btn">
+  <a className="btn-floating btn-large red" href="false">
+    <i className="large material-icons">chat</i>
   </a>
   <ul>
     
-    <li><a class="btn-floating green" href="false"><i class="material-icons">add_circle_outline</i></a></li>
-    <li><a class="btn-floating blue" href="false"><i class="material-icons">drafts</i></a></li>
+    <li><a className="btn-floating green" href="false"><i className="material-icons">add_circle_outline</i></a></li>
+    <li><a className="btn-floating blue" href="false"><i className="material-icons">drafts</i></a></li>
  
   </ul>
 </div>

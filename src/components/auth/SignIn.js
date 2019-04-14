@@ -21,14 +21,14 @@ class SignIn extends Component {
           <h3 className="grey-text text-darken-3">Sign In</h3>
           <div className="row">
           <div className="input-field">
-          <i class="material-icons prefix">account_circle</i>
+          <i className="material-icons prefix">account_circle</i>
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />
           </div>
           </div>
           <div className="row">
           <div className="input-field">
-          <i class="material-icons prefix">mode_edit</i>
+          <i className="material-icons prefix">mode_edit</i>
             <label htmlFor="password">Password</label>
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
