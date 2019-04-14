@@ -7,7 +7,6 @@ import SignUp from './components/auth/SignUp'
 import GlassesDetails from './components/Glasses/GlassesDetails'
 import Diagnostic from './components/dashboard/Diagnostic'
 import AddGlass from './components/Glasses/AddGlass'
-
 import MessageButton from './components/chat/MessageButton'
 
 class App extends Component {

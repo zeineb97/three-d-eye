@@ -10,8 +10,8 @@ const GlassesList = ({glasses}) => {
            {
                glasses && glasses.map(glass => {
                    return (
-                       <Link to={"/glasses/"+ glass.id}>
-                       <GlassesSummary glass={glass} key={glass.id}/>
+                       <Link to={"/glasses/"+ glass.id} key ={glass.id}>
+                       <GlassesSummary glass={glass}/>
                        </Link>
                    )
                })
