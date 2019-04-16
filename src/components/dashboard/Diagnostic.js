@@ -66,6 +66,7 @@ class Diagnostic extends Component {
             <span>Between 4 and 6 hours per day</span> <br/>
             <input type="checkbox" />
             <span>More</span>
+            <span>More</span>
           </label>
          </div> 
 
