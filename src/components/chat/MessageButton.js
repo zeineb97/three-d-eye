@@ -10,9 +10,9 @@ class MessageButton extends Component {
   });
   */
   return (
-    
+
     <div className="fixed-action-btn">
-  <a className="btn-floating btn-large red" href="false">
+  <a className="btn-floating btn-large pulse pink" href="false">
     <i className="large material-icons">chat</i>
   </a>
   <ul>
