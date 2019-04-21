@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import {connect } from 'react-redux'
+import { signUp } from '../../store/actions/authActions'
 class SignUp extends Component {
   state = {
     email: '',
     password: '',
-    fullName: '',
+    firstName: '',
+    lastName: '',
     adress: '',
     dateOfBirth:'',
     phone:''
@@ -17,10 +19,10 @@ class SignUp extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.signUp(this.state);
   }
   render() {
-    const {  auth } = this.props;
+    const {  auth , authError} = this.props;
     if (auth.uid) return <Redirect to ='/'/>
     return (
       <div className="container">
@@ -37,10 +39,16 @@ class SignUp extends Component {
             <label htmlFor="password">Password</label>
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
+          
           <div className="input-field">
           <i className="material-icons prefix">account_circle</i>
-            <label htmlFor="fullName">Full Name</label>
-            <input type="text" id='fullName' onChange={this.handleChange} />
+            <label htmlFor="firstName">First Name</label>
+            <input type="text" id='firstName' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+          <i className="material-icons prefix">circle</i>
+            <label htmlFor="lastName">Last Name</label>
+            <input type="text" id='lastName' onChange={this.handleChange} />
           </div>
           
           <div className="input-field">
@@ -61,10 +69,13 @@ class SignUp extends Component {
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+            <div className="center red-text">
+              { authError ? <p>{authError}</p> : null }
+            </div>
           </div>
           <div className="preloader-wrapper big active">
   
-  </div>
+          </div>
         </form>
       </div>
     )
@@ -72,8 +83,15 @@ class SignUp extends Component {
 }
 const mapStateToProps = (state) => {
   return{
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  }
+}
+const mapDispatchToProps = (dispatch)=> {
+  return {
+    signUp: (creds) => dispatch(signUp(creds))
   }
 }
 
-export default connect(mapStateToProps)(SignUp)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
