@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import {Redirect} from 'react-router-dom'
+import { connect } from 'react-redux';
 class Diagnostic extends Component {
   state = {
     email: '',
@@ -18,6 +19,8 @@ class Diagnostic extends Component {
     console.log(this.state);
   }
   render() {
+    const { auth}= this.props;
+    if (!auth.uid) return <Redirect to ='/signin'/>
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -80,5 +83,10 @@ class Diagnostic extends Component {
     )
   }
 }
+const mapStateToProps = (state)=> {
+  return {
+         auth: state.firebase.auth 
+     }
+ } 
 
-export default Diagnostic
+export default connect(mapStateToProps)(Diagnostic) 

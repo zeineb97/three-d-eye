@@ -6,17 +6,6 @@ const SignedInLinks = (props) => {
   return (
     <div>
       <ul className="right">
-       <li>
-         <div className="nav-wrapper">
-         <form>
-          <div className="input-field">
-            <input id="search" type="search" required/>
-            <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-            <i className="material-icons">close</i>
-          </div>
-         </form>
-        </div>
-        </li>
         <li><NavLink to='/diagnostic'>New Diagnodtic</NavLink></li>
         <li><NavLink to='/addglasses'>Add Glasses</NavLink></li>
         <li><a  onClick={props.signOut}>Log Out</a></li>
@@ -27,6 +16,7 @@ const SignedInLinks = (props) => {
           </NavLink>
         </li>
       </ul>
+   
     </div>
     
   )

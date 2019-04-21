@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGlass } from '../../store/actions/glassActions'
-
+import {Redirect} from 'react-router-dom'
 class AddGlass extends Component {
   state = {
     brand: '',
@@ -27,6 +27,8 @@ class AddGlass extends Component {
     this.props.history.push('/');
   }
   render() {
+    const { auth}= this.props;
+    if (!auth.uid) return <Redirect to ='/signin'/>
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -81,10 +83,17 @@ class AddGlass extends Component {
   }
 }
 
+const mapStateToProps = (state)=> {
+  return {
+         auth: state.firebase.auth 
+     }
+ }
+
+
 const mapDispatchToProps = dispatch => {
   return {
     addGlass: (glass) => dispatch(addGlass(glass))
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddGlass)
+export default connect(mapStateToProps, mapDispatchToProps)(AddGlass)

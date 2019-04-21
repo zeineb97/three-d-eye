@@ -2,11 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
-
+import {Redirect} from 'react-router-dom'
 const GlassesDetails = (props) => {
   
   //console.log(props)
-  const {glass} = props ; 
+  const {glass, auth } = props ; 
+  if (!auth.uid) return <Redirect to ='/signin'/>
+
   if (glass) {
     return (
       <div className="container section project-details">
@@ -41,7 +43,8 @@ const mapStateToProps= (state, ownProps) => {
     const glasses = state.firestore.data.glasses
     const glass =glasses ?  glasses[id] : null
   return {
-    glass : glass
+    glass : glass, 
+    auth: state.firebase.auth
   }
 }
 export default compose(
