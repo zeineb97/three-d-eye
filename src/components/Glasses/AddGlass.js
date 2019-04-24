@@ -13,7 +13,8 @@ class AddGlass extends Component {
     description:'',
     gender:'',
     price:'',
-    type:''
+    type:'',
+    shop:''
   }
   handleChange = (e) => {
     this.setState({
@@ -72,6 +73,10 @@ class AddGlass extends Component {
           <div className="input-field">
             <input type="text" id='type' onChange={this.handleChange} />
             <label htmlFor="type">Type</label>
+          </div>
+          <div className="input-field">
+            <input type="text" id='shop' onChange={this.handleChange} />
+            <label htmlFor="shop">Shop</label>
           </div>
           
           <div className="input-field">
