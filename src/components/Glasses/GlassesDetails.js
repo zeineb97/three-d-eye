@@ -20,7 +20,7 @@ const GlassesDetails = (props) => {
       </div>
       <div className="card-action grey lighten-4 grey-text">
         <div>{glass.brand}</div>
-        <div>{moment(glass.createdAt.toDate()).calendar()}</div>
+        <div>{moment( glass.createdAt.toDate()).calendar()}</div>
       </div>
     </div>
   </div>
