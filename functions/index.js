@@ -8,7 +8,7 @@ const createNotification = ((notification) => {
     .then(doc => console.log('notification added', doc));
 });
 
-
+/*
 exports.glassesCreated = functions.firestore
   .document('glasses/{glassId}')
   .onCreate(doc => {
@@ -23,6 +23,7 @@ exports.glassesCreated = functions.firestore
     return createNotification(notification);
 
 });
+*/
 
 exports.userJoined = functions.auth.user()
   .onCreate(user => {
