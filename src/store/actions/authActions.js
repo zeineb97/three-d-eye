@@ -32,13 +32,13 @@ export const signIn = (credentials) => {
       firebase.auth().createUserWithEmailAndPassword(
         newUser.email, 
         newUser.password
-      ).then(resp => {
-        return firestore.collection('users').doc(resp.user.uid).set({
+      ).then(response => {
+        return firestore.collection('users').doc(response.user.uid).set({
           firstName: newUser.firstName,
           lastName: newUser.lastName,
-          adress: newUser.adresse,
-          phoneNumber: newUser.phoneNumber,
+          adress: newUser.adress,
           dateOfBirth: newUser.dateOfBirth,
+          phone: newUser.phone,
           initials: newUser.firstName[0] + newUser.lastName[0]
         });
       }).then(() => {
