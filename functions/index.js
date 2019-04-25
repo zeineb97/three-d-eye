@@ -8,22 +8,22 @@ const createNotification = ((notification) => {
     .then(doc => console.log('notification added', doc));
 });
 
-/*
+
 exports.glassesCreated = functions.firestore
-  .document('glasses/{glassId}')
+  .document('glasses/{glasseId}')
   .onCreate(doc => {
 
-    const project = doc.data();
+    const glasse = doc.data();
     const notification = {
       content: 'Added a new glasses',
-      user: `${glass.shop}`,
+      user: `${glasse.shop}`,
       time: admin.firestore.FieldValue.serverTimestamp()
     }
 
     return createNotification(notification);
 
 });
-*/
+
 
 exports.userJoined = functions.auth.user()
   .onCreate(user => {
