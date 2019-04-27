@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux';
+import {addDiagnostic} from '../../store/actions/diagnosticActions'
 class Diagnostic extends Component {
   state = {
-    email: '',
-    profession: '',
+    gauche:'',
+    droit: '',
+    age :'',
+    profession :'',
     mobile_hours:'',
-    laptop_hours:'',
-    age:''
+    laptop_hours:''
+    
   }
   handleChange = (e) => {
     this.setState({
@@ -16,7 +19,9 @@ class Diagnostic extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
+    this.props.addDiagnostic(this.state);
+    this.props.history.push('/');
   }
   render() {
     const { auth}= this.props;
@@ -27,8 +32,12 @@ class Diagnostic extends Component {
           <h3 className="grey-text text-darken-3">Diagnostic</h3>
           <h5 className="grey-text text-darken-3">Correction indicated on the prescription</h5>
           <div className="input-field">
-            <label htmlFor="text">We need to ask a specialist</label>
-            <input type="email" id='email' onChange={this.handleChange} />
+            <label htmlFor="text">Œil Gauche</label>
+            <input type="text" id='gauche' onChange={this.handleChange} />
+          </div>
+          <div className="input-field">
+            <label htmlFor="text">Œil Droit</label>
+            <input type="text" id='droit' onChange={this.handleChange} />
           </div>
         
       <h5 className="grey-text text-darken-3">Lifestyle</h5>
@@ -42,36 +51,19 @@ class Diagnostic extends Component {
             <input type="text" id='profession' onChange={this.handleChange} />
           </div>
          
-          <div >
-          <h7 className="grey-text text-darken-3">How many hours do yoy spend on your mobile ? <br/></h7>
-          <label>
+          <div className="input-field">
+          
+          <label htmlFor="mobile_hours">How many hours do you spend on your mobile ?</label>
+          <input type="text" id='mobile_hours' onChange={this.handleChange} />
             
-            <input type="checkbox" id='mobile_hours' />
-            <span>Between 1 and 2 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>Between 2 and 4 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>Between 4 and 6 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>More</span>
-          </label>
-         </div> 
+          </div> 
 
-         <div >
-          <h7 className="grey-text text-darken-3">How many hours do yoy spend on your laptop ? <br/></h7>
-          <label>
-            
-            <input type="checkbox" id='laptop_hours' />
-            <span>Between 1 and 2 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>Between 2 and 4 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>Between 4 and 6 hours per day</span> <br/>
-            <input type="checkbox" />
-            <span>More</span>
-            <span>More</span>
-          </label>
-         </div> 
+          <div className="input-field">
+          
+          <label htmlFor="laptop_hours">How many hours do you spend on your laptop ?</label>
+          <input type="text" id='laptop_hours' onChange={this.handleChange} />
+          
+          </div> 
 
 
           
@@ -88,5 +80,11 @@ const mapStateToProps = (state)=> {
          auth: state.firebase.auth 
      }
  } 
+const mapDispatchToProps = dispatch => {
+  return {
+    addDiagnostic: (diagnostic) => dispatch(addDiagnostic(diagnostic))
+  }
+}
+ 
 
-export default connect(mapStateToProps)(Diagnostic) 
+export default connect(mapStateToProps, mapDispatchToProps)(Diagnostic) 
