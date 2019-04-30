@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGlass } from '../../store/actions/glassActions'
 import {Redirect} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 class AddGlass extends Component {
   state = {
     brand: '',
@@ -14,7 +15,8 @@ class AddGlass extends Component {
     gender:'',
     price:'',
     type:'',
-    shop:''
+    shop:'',
+    model:''
   }
   handleChange = (e) => {
     this.setState({
@@ -78,7 +80,9 @@ class AddGlass extends Component {
             <input type="text" id='shop' onChange={this.handleChange} />
             <label htmlFor="shop">Shop</label>
           </div>
-          
+          <div>
+           <Link to='/model' > Upload you 3D Model here ! </Link>
+          </div>
           <div className="input-field">
             <button className="btn pink lighten-1">Add</button>
           </div>

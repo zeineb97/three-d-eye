@@ -8,6 +8,8 @@ import GlassesDetails from './components/Glasses/GlassesDetails'
 import Diagnostic from './components/dashboard/Diagnostic'
 import AddGlass from './components/Glasses/AddGlass'
 import MessageButton from './components/chat/MessageButton'
+import GlassesUpload from './components/Glasses/GlassesUpload'
+
 
 class App extends Component {
   render() {
@@ -23,6 +25,8 @@ class App extends Component {
             <Route path='/signup' component={SignUp} />
             <Route path='/diagnostic' component={Diagnostic} />
             <Route path='/addglasses' component={AddGlass} />
+            <Route path='/model' component={GlassesUpload} />
+           
           </Switch>
         </div>
       </BrowserRouter>
