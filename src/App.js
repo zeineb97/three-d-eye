@@ -9,6 +9,7 @@ import Diagnostic from './components/dashboard/Diagnostic'
 import AddGlass from './components/Glasses/AddGlass'
 import MessageButton from './components/chat/MessageButton'
 import GlassesUpload from './components/Glasses/GlassesUpload'
+import DemoScene from './components/DemoScene';
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path='/diagnostic' component={Diagnostic} />
             <Route path='/addglasses' component={AddGlass} />
             <Route path='/model' component={GlassesUpload} />
+            <Route path='/demo' component={DemoScene} />
            
           </Switch>
         </div>
