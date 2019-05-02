@@ -30,8 +30,8 @@ exports.diagnosticsCreated = functions.firestore
 
     const diagnostic= doc.data();
     const notification = {
-      content: 'Added a new diagnostic',
-      user: `${diagnostic.UserFirstName} ${diagnostic.UserLastName}`,
+      content: 'A new diagnostic was added',
+      user: ``,
       time: admin.firestore.FieldValue.serverTimestamp()
     }
 
