@@ -29,8 +29,8 @@ class Diagnostic extends Component {
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
-          <h3 className="grey-text text-darken-3">Diagnostic</h3>
-          <h5 className="grey-text text-darken-3">Correction indicated on the prescription</h5>
+          <h5 id="feature">Diagnostic</h5>
+          <p id="sub-title">Correction indicated on the prescription</p>
           <div className="input-field">
             <label htmlFor="text">Œil Gauche</label>
             <input type="text" id='gauche' onChange={this.handleChange} />
@@ -40,7 +40,7 @@ class Diagnostic extends Component {
             <input type="text" id='droit' onChange={this.handleChange} />
           </div>
         
-      <h5 className="grey-text text-darken-3">Lifestyle</h5>
+      <p id="sub-title">Lifestyle</p>
       <div className="input-field">
             <label htmlFor="age">Age</label>
             <input type="text" id='age' onChange={this.handleChange} />

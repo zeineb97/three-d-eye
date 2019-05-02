@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {storage} from '../../config/fbConfig';
+import { Link } from 'react-router-dom'
 
 class GlassesUpload extends Component {
   constructor(props) {
@@ -61,6 +62,10 @@ class GlassesUpload extends Component {
        
        
         <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded models" height="300" width="400"/>
+     
+        <div>
+           <Link to='/addglasses' > Done :D</Link>
+          </div>
       </div>
     )
   }

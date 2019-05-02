@@ -35,7 +35,12 @@ class AddGlass extends Component {
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Add a New Glasses</h5>
+          <h5 id="feature">Add New Glasses</h5>
+
+          <div>
+           <Link to='/model' > Upload you 3D Model here ! </Link>
+          </div>
+
           <div className="input-field">
             <input type="text" id='brand' onChange={this.handleChange} />
             <label htmlFor="brand">Brand</label>
@@ -80,9 +85,7 @@ class AddGlass extends Component {
             <input type="text" id='shop' onChange={this.handleChange} />
             <label htmlFor="shop">Shop</label>
           </div>
-          <div>
-           <Link to='/model' > Upload you 3D Model here ! </Link>
-          </div>
+          
           <div className="input-field">
             <button className="btn pink lighten-1">Add</button>
           </div>

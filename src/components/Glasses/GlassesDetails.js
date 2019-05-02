@@ -22,6 +22,11 @@ const GlassesDetails = (props) => {
         <div>{glass.brand}</div>
         <div>{moment( glass.createdAt.toDate()).calendar()}</div>
       </div>
+      <img src= 'https://firebasestorage.googleapis.com/v0/b/deye-8cbd2.appspot.com/o/models%2Fpolice.jpg?alt=media&token=be3a7c36-f3b0-48fd-a2a6-fc550219ef47' alt=" Police model" />
+      <img src= 'https://firebasestorage.googleapis.com/v0/b/deye-8cbd2.appspot.com/o/models%2FVazrobe-Vintage-Small-Round-Eyeglasses-Frame-Men-Women-Decorative-Eye-Glasses-Frames-for-Man-Optical-Oval.jpg_640x640.jpg?alt=media&token=a9ca33d1-0d66-4e39-baac-c48c12218df0' alt=" Police model" />
+      <img src= 'https://firebasestorage.googleapis.com/v0/b/deye-8cbd2.appspot.com/o/models%2Ft%C3%A9l%C3%A9chargement.jpg?alt=media&token=e56d534a-b07c-4685-9279-b9739d906519' alt=" Police model" />
+     
+  
     </div>
   </div>
 
