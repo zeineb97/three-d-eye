@@ -10,7 +10,7 @@ import AddGlass from './components/Glasses/AddGlass'
 import MessageButton from './components/chat/MessageButton'
 import GlassesUpload from './components/Glasses/GlassesUpload'
 import DemoScene from './components/DemoScene';
-
+import MessageWindow from './components/chat/MessageWindow';
 
 class App extends Component {
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
             <Route path='/addglasses' component={AddGlass} />
             <Route path='/model' component={GlassesUpload} />
             <Route path='/demo' component={DemoScene} />
-           
+            <Route path='/messages' component={MessageWindow} />
           </Switch>
         </div>
       </BrowserRouter>

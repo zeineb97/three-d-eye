@@ -24,6 +24,20 @@ exports.glassesCreated = functions.firestore
 
 });
 
+exports.diagnosticsCreated = functions.firestore
+  .document('diagnostics/{diagnosticId}')
+  .onCreate(doc => {
+
+    const diagnostic= doc.data();
+    const notification = {
+      content: 'A new diagnostic was added',
+      user: ``,
+      time: admin.firestore.FieldValue.serverTimestamp()
+    }
+
+    return createNotification(notification);
+
+});
 
 exports.userJoined = functions.auth.user()
   .onCreate(user => {
