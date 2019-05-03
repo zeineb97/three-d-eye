@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import React from "react";
 import React3 from "react-three-renderer";
-import ObjectModel from 'react-three-renderer-objects';
+import ObjectModel from 'react-three-renderer-objects'; 
 import glassesModel from "../assets/glassesForBoddicker.obj";
 
 class DemoScene extends React.Component {
@@ -21,8 +21,8 @@ render() {
     return (
       <React3
         mainCamera="camera"
-        width={width/4}
-        height={height/4}
+        width={width/10}
+        height={height/10}
         alpha={true}
       >
         <scene ref="scene">
@@ -38,6 +38,7 @@ render() {
           />
           <group name="carGroup">
             <ObjectModel
+
               name="boat"
               model={glassesModel}
               scene={this.state.scene}
