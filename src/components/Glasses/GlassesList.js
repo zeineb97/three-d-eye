@@ -6,7 +6,7 @@ const GlassesList = ({glasses}) => {
     return (
         
         <div className="project-list section">
-             <h1 id="glasses">Glasses</h1>
+             <h1 id="glasses_txt">Glasses</h1>
            {
                glasses && glasses.map(glass => {
                    return (

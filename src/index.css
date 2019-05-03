@@ -28,7 +28,7 @@ img{
         font-weight: 400;
         margin-bottom: 20px
     }
-    #glasses{
+    #glasses_txt{
         color: #ec407b;
         font-family: 'VT323', sans-serif;
         font-size: 40px;
@@ -45,4 +45,31 @@ img{
     #sub-title{
         font-size: 20px;
         color: #077096;
+    }
+    #logo{
+        margin-top:-55px;
+      margin-left: -50px;
+        height: 100px;
+        width: 100px; 
+    }
+    nav{
+        padding: 50px; 
+    }
+    #nav_link {
+        color: #238bbd;
+        margin-top: -30px;
+        font-size: 20px;
+        
+    }
+    #nav_link_btn{
+        color: #238bbd;
+        margin-top: -60px;
+        font-size: 20px;
+
+    }
+    #initials{
+        margin-top:-55px;
+        font-size: 20px;
+        height: 50px;
+        width: 50px; 
     }

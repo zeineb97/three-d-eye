@@ -22,7 +22,7 @@ class MessageWindow extends Component {
         return (
             <div className="container">
             <form className="white" onSubmit={this.handleSubmit}>
-              <h3 className="grey-text text-darken-3">Messages</h3>
+              <p id="feature">Messages</p>
             <div className="row">
            <div className="input-field col s12">
            <i className="material-icons prefix"> keyboard_arrow_right</i>
