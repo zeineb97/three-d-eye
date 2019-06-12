@@ -61,7 +61,7 @@ class GlassesUpload extends Component {
         <br/>
        
        
-        <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded models" height="300" width="400"/>
+        
      
         <div>
            <Link to='/addglasses' > Done :D</Link>
